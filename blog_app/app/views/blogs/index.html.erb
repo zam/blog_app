@@ -1,0 +1,12 @@
+<h1>Rails Blog App</h1>
+<ul>
+    <% @blogs.each do |blog| %>
+        <li>
+            <a href="/blogs/<%= blog.id %>">
+            <%= blog.title%>
+            </a>
+        </li>
+    <% end %>    
+</ul>
+
+<button><%= link_to "New Blog", new_blog_path %></button>

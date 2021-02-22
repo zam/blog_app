@@ -1,0 +1,9 @@
+<h1><%= @blog.title %></h1>
+<h2><%= @blog.author %></h2>
+<p><%= @blog.body %></p>
+
+<button><%= link_to "Edit", edit_blog_path(@blog) %></button>
+<button><%= link_to "Delete", blog_path(@blog),
+                    method: :delete,
+                    data: { confirm: "Delete this blog?" } %></button>
+<button><%= link_to "Home", blogs_path %></button>
