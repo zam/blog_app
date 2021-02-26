@@ -1,0 +1,28 @@
+<h1>Comments</h1>
+
+<table>
+    <thead>
+        <tr>
+        <th>Comment</th>
+        <th>User</th>
+        <th></th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @comments.each do |comment| %>
+            <tr>
+                <td><%= comment.content %> </td>
+                <td><%= comment.user%></td>
+                <td><button><%= link_to "Edit", edit_blog_comment_path(@blog, comment) %></button></td>
+                <td><button><%= link_to "Delete", blog_comment_path(@blog, comment),
+                                        method: :delete,
+                                        data: { confirm: "Delete this comment?" } %></button>
+                </td>
+            </tr>
+        <% end %> 
+    </tbody>   
+</table>
+
+<button><%= link_to "New Comment", new_blog_comment_path(@blog) %></button>
+<button><%= link_to "Back to blog", blog_path(@blog) %></button>

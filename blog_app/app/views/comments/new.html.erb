@@ -1,0 +1,17 @@
+<h1>New Comment</h1>
+
+<%= form_with model: [@blog, @comment], local: true do |form| %>
+    <div>
+        <%= form.label :user %><br>
+        <%= form.text_field :user %>
+    </div>
+
+    <div>
+        <%= form.label :content %><br>
+        <%= form.text_field :content %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+    <button><%= link_to "Back to comments", blog_comments_path(@blog) %></button>
+<% end %>
